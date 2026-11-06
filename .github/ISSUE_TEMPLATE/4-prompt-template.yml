@@ -1,0 +1,50 @@
+name: 提示词模板改进
+description: 为特定器物类型补充约束句，或修正模板里失效的措辞
+title: "[提示词] "
+labels: ["prompt-template"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        模板见 [prompt-recipes.md](https://github.com/qingqijiete/relic-ink-collage/blob/main/references/prompt-recipes.md)。修改模板时优先提供**能被检查的约束句**，避免堆形容词。
+
+  - type: input
+    id: template
+    attributes:
+      label: 涉及的模板
+      placeholder: 单幅 / 九宫格 / 素材板，或具体段落名
+    validations:
+      required: true
+
+  - type: input
+    id: subject
+    attributes:
+      label: 器物类型
+      placeholder: 例如 长条玉器、镂空器、造像、多足器
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题
+      description: 模型在这类器物上总是怎样出错。越具体越好。
+      placeholder: 长条玉器被压扁成宽方形，高度比例从不按 1:6 走
+    validations:
+      required: true
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: 建议的约束句
+      description: 直接给出可以粘进模板的句子。
+      render: text
+      placeholder: 玉琮必须是细长方柱，高度约为宽度的六倍，绝对不能压扁成宽方形或堆叠成塔。
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 修改前后对比
+      description: 附两张图最有说服力。只有描述也可以提交。

@@ -1,0 +1,60 @@
+name: 脚本问题或需求
+description: make_refboard / clean_corner / assemble_grid 的报错、结果异常或新能力
+title: "[脚本] "
+labels: ["scripts"]
+body:
+  - type: dropdown
+    id: script
+    attributes:
+      label: 涉及的脚本
+      options:
+        - make_refboard.py（素材板）
+        - clean_corner.py（清角标）
+        - assemble_grid.py（九格拼合）
+        - tests/smoke_test.py
+        - 多个 / 全部
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 问题类型
+      options:
+        - 直接报错，无法运行
+        - 能跑但结果不符合预期
+        - 兼容性问题（系统、Python 或依赖版本）
+        - 新能力需求
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 贴出完整命令行，含参数。如果有报错，把完整 traceback 贴进来。
+      render: shell
+      placeholder: |
+        python scripts/make_refboard.py --out refboard.jpg --crop 0.1,0.1,0.9,0.9 a.jpg
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果与实际结果
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: 环境
+      placeholder: Windows 11 / Python 3.12 / Pillow 10.x / opencv 4.10
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        > **已知边界**：`clean_corner.py` 只能处理深色底上的角标。浅色纸面上的半透明白字无法用阈值分离，这是方法本身的限制，不需要再报一遍。详见 README 的「已知限制」。

@@ -36,3 +36,20 @@ jobs:
 
       - name: Run smoke test
         run: python tests/smoke_test.py
+
+  issue-forms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      # GitHub 对 issue form 的字段错误不会报错，只会让新建 Issue 退回空白模板，
+      # 所以单独渲染一遍结构，把问题留在 CI 里。
+      - name: Install validator dependency
+        run: python -m pip install pyyaml
+
+      - name: Validate issue templates
+        run: python tests/check_issue_forms.py

@@ -1,0 +1,56 @@
+name: 画面失败模式
+description: 生成的图出现问题——器物变形、多出器物、伪文字、纸带断裂、风格跑偏
+title: "[失败模式] "
+labels: ["failure-mode"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这类报告最有价值的部分是**能复现的提示词**。请一并贴上当时的提示词与成品图，否则很难判断是模板问题还是单次随机。
+
+        提交前建议先翻一遍 [style-system.md 的失败模式对照表](https://github.com/qingqijiete/relic-ink-collage/blob/main/references/style-system.md)，有些问题那里已有成因和修正句式。
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 失败类型
+      options:
+        - 器物变形或走样
+        - 多出无来源的器物
+        - 出现伪文字、伪铭文或印章状符号
+        - 纸带断裂、碎成小块或位置错位
+        - 风格跑偏，脱离墨黑窗格体系
+        - 器物并排站队，缺少前后遮挡
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: symptom
+    attributes:
+      label: 现象
+      description: 具体描述哪里不对。如果是器物问题，说明是哪一件、错在形制还是纹样。
+      placeholder: 第三件的玉琮被压扁成宽柱，高度只有宽度的两倍左右……
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt
+    attributes:
+      label: 当时的提示词
+      description: 贴出关键段落即可，尤其是器物描述与构图约束那几句。
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: attempts
+    attributes:
+      label: 已经试过的修正
+      description: 换措辞、换来源图、减器物数量等。没有可留空。
+
+  - type: input
+    id: env
+    attributes:
+      label: 生图工具与参数
+      placeholder: 例如 ImageGen，1024x1024，input_fidelity=high

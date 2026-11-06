@@ -128,6 +128,17 @@ python scripts/assemble_grid.py --out grid.png \
 - **它不做文物鉴定。** 本技能不推断年代、产地、馆藏号，也不补全残缺纹样。所有形制信息必须来自来源照片。
 - **九宫格会消耗更多生成额度。** 九格通常需要 9–15 次生成（含返修），先跑中央格校准风格再批量生成能省下不少。
 
+## 参与贡献
+
+四类贡献都有对应的 issue 模板，点 [New issue](https://github.com/qingqijiete/relic-ink-collage/issues/new/choose) 直接选：
+
+- **画面失败模式** —— 生成结果出了问题，带上提示词与成品图
+- **新动线提案** —— 新的纸带结构，需附九格边界参数与实测成品
+- **脚本问题或需求** —— 三个脚本的 bug、兼容性、新能力
+- **提示词模板改进** —— 针对特定器物类型的约束句
+
+细则见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
 ## 许可
 
 [MIT](LICENSE) © 2026 清奇杰特

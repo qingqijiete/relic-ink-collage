@@ -1,0 +1,68 @@
+name: 新动线提案
+description: 提出一种新的纸带贯穿结构，或修正现有九格的边界参数
+title: "[动线] "
+labels: ["choreography"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        动线提案的验收标准是**可复现**：给出九格边界参数，并附至少一张实测成品。只有描述、没有成品的提案，通常没法判断在拼合时会不会错位。
+
+        现有三种结构的参数见 [grid-choreography.md](https://github.com/qingqijiete/relic-ink-collage/blob/main/references/grid-choreography.md)。
+
+  - type: input
+    id: name
+    attributes:
+      label: 动线名称
+      placeholder: 例如「双纸带交叉」「环形回绕」
+    validations:
+      required: true
+
+  - type: dropdown
+    id: relation
+    attributes:
+      label: 与现有结构的关系
+      options:
+        - 全新结构
+        - 竖通的变体
+        - 横贯的变体
+        - 斜卷的变体
+        - 对现有结构的参数修正
+    validations:
+      required: true
+
+  - type: textarea
+    id: path
+    attributes:
+      label: 路径描述
+      description: 纸带从哪条边进入、在哪里转折、从哪条边离开，途中穿在器物的前面还是后面。
+      placeholder: 主纸带从左边 38% 高度进入，在中央格绕圆器一圈后下沉，从底边 58% 宽度离开……
+    validations:
+      required: true
+
+  - type: textarea
+    id: borders
+    attributes:
+      label: 九格边界参数
+      description: 逐格写出进入/离开的边与百分比。左右相邻必须共用同一个数字。
+      render: text
+      placeholder: |
+        第1格：左边 32% 进入 → 右边 32% 离开
+        第2格：左边 32% 进入 → 右边 32% 离开
+        第4格：顶边 62% 进入 → 底边 62% 离开
+    validations:
+      required: true
+
+  - type: textarea
+    id: subject
+    attributes:
+      label: 适合的题材
+      description: 这种动线在什么器物组合或叙事下比现有三种更好。
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 实测成品
+      description: 直接拖图进来，或贴链接。单格与拼合总览最好都给。
+    validations:
+      required: true
