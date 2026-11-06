@@ -9,17 +9,19 @@
 
 这是一个为 AI Agent 编写的 **Skill**（技能包），不是独立 App。它把"怎么做"写成了可执行的流程：视觉语法、动线参数、提示词模板，加上三个真正能跑的脚本。
 
-![九宫格：墨影窗格](docs/grid-ink-window.jpg)
+<img src="docs/single-five-relics.jpg" width="440" alt="单幅：五器同场">
 
 ## 效果
 
-| 九宫格 · 墨影窗格 | 九宫格 · 长卷回旋 |
+九宫格不是九张拼图凑在一起，而是一套跨格动线系统。下面两套都是九张 `1024×1024` 单图拼合的结果：
+
+| 墨影窗格 · 横贯动线 | 长卷回旋 · 斜卷动线 |
 | --- | --- |
 | ![grid](docs/grid-ink-window.jpg) | ![grid2](docs/grid-scroll-spiral.jpg) |
 
-| 单幅 · 五器同场 | 单格 · 镜与玉 |
-| --- | --- |
-| ![single](docs/single-five-relics.jpg) | ![panel](docs/panel-05-mirror.jpg) |
+单格放大后仍可独立成立——这是判断"真九宫格"还是"伪九宫格"的标准：
+
+![单格：镜与玉](docs/panel-05-mirror.jpg)
 
 ## 它解决什么问题
 
