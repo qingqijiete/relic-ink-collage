@@ -1,0 +1,11 @@
+# 统一换行，避免 Windows 与 Linux 之间的 CRLF 噪音
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.zip binary
+
+# GitHub 语言统计：文档不计入
+*.md linguist-documentation
+docs/** linguist-documentation

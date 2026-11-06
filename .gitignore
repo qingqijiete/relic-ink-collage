@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# 运行产物：素材板、清角标副本、拼合结果（只忽略根目录生成的，不影响 docs/）
+/refboard*.jpg
+/grid*.png
+/grid*.jpg
+/*_clean.png
+/*_check*.jpg
+/output/
+/out/
+/tmp/
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 原始照片不入库
+*.NEF
+*.nef
+*.CR2
+*.ARW
