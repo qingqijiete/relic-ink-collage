@@ -56,11 +56,11 @@
 
 ```bash
 # 用户级（所有项目可用）
-git clone https://github.com/<your-name>/relic-ink-collage.git \
+git clone https://github.com/qingqijiete/relic-ink-collage.git \
   ~/.workbuddy/skills/relic-ink-collage
 
 # 项目级（仅当前项目）
-git clone https://github.com/<your-name>/relic-ink-collage.git \
+git clone https://github.com/qingqijiete/relic-ink-collage.git \
   .workbuddy/skills/relic-ink-collage
 ```
 
